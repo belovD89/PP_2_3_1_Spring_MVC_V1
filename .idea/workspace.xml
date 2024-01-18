@@ -54,7 +54,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "D:/1_JAVA_УЧЕБА/1_УЧЕБА_В_КАТА/pre-project/PP_2_3_1_new",
+    "last_opened_file_path": "D:/1_JAVA_УЧЕБА/1_УЧЕБА_В_КАТА/pre-project/PP_2_3_1_Spring_MVC_V1",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -182,6 +182,7 @@
       <workItem from="1705311310987" duration="11824000" />
       <workItem from="1705559818346" duration="2962000" />
       <workItem from="1705569959950" duration="7418000" />
+      <workItem from="1705581883787" duration="299000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <option name="closed" value="true" />
@@ -215,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705581723778</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1">
+      <option name="closed" value="true" />
+      <created>1705581906874</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705581906874</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,5 +244,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1" />
     <option name="LAST_COMMIT_MESSAGE" value="1" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
