@@ -41,7 +41,7 @@ import static java.lang.System.getProperty;
 @Configuration
 @ComponentScan(value = "web")
 @EnableTransactionManagement
-@PropertySource("classpath:app.properties")
+@PropertySource("classpath:db.properties")
 public class AppConfig {
 
     private final org.springframework.core.env.Environment environment;
