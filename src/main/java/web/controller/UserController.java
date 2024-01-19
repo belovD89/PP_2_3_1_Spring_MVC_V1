@@ -12,62 +12,45 @@ import web.servise.UserService;
 import java.util.List;
 
 @Controller
+@RequestMapping()
 public class UserController {
 
     private final UserService userService;
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping(value = "/")
     public ModelAndView findAll() {
-        ModelAndView modelAndView = new ModelAndView();
-        List<User> users = userService.findAll();
-        modelAndView.setViewName("index");
-        modelAndView.addObject("users", users);
-        return modelAndView;
+        return new ModelAndView("index").addObject("users", userService.findAll());
     }
 
     @GetMapping("/user-create")
-    public ModelAndView createUserFrom(User user) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("user-create");
-        modelAndView.addObject("user", user);
-        return modelAndView;
+    public ModelAndView createUserFrom(@ModelAttribute("user") User user) {
+        return new ModelAndView("user-create");
     }
 
     @PostMapping("/user-create")
-    public ModelAndView createUser(User user) {
-        ModelAndView modelAndView = new ModelAndView();
+    public ModelAndView createUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        modelAndView.setViewName("redirect:/");
-        return modelAndView;
+        return new ModelAndView("redirect:/");
     }
 
     @GetMapping("user-delete/{id}")
     public ModelAndView deleteUser(@PathVariable("id") Long id) {
-        ModelAndView modelAndView = new ModelAndView();
         userService.deleteById(id);
-        modelAndView.setViewName("redirect:/");
-        return modelAndView;
+        return new ModelAndView("redirect:/");
     }
 
     @GetMapping("user-update/{id}")
-    public ModelAndView updateUserFrom(@PathVariable("id") Long id, Model model) {
-        ModelAndView modelAndView = new ModelAndView();
-        User user = userService.findById(id);
-        model.addAttribute("user", user);
-        modelAndView.setViewName("/user-update");
-        modelAndView.addObject("id", id);
-        return modelAndView;
+    public ModelAndView updateUserForm(@PathVariable("id") Long id) {
+        return new ModelAndView("user-update").addObject("user", userService.findById(id));
     }
 
     @PostMapping("/user-update")
-    public ModelAndView updateUser(User user) {
-        ModelAndView modelAndView = new ModelAndView();
+    public ModelAndView updateUser(@ModelAttribute("user") User user) {
         userService.updateUser(user);
-        modelAndView.setViewName("redirect:/");
-        modelAndView.addObject("user", user);
-        return modelAndView;
+        return new ModelAndView("redirect:/");
     }
 }
