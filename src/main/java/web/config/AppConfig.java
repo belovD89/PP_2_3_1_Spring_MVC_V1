@@ -46,7 +46,6 @@ public class AppConfig {
 
     private final org.springframework.core.env.Environment environment;
 
-    @Autowired
     public AppConfig(Environment environment) {
         this.environment = environment;
     }
